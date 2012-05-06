@@ -4,4 +4,4 @@ Spree Highlighted Products is a simple Spree Extension that allows site administ
 
 == Installation
 
-  gem 'spree_highlighted_products', :git => 'git@github.com:entropillc/spree_highlighted_products.git'
+  gem 'spree_highlighted_products', :git => 'git://github.com/entropillc/spree_highlighted_products.git'

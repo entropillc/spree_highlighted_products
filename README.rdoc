@@ -1,3 +1,7 @@
-= SpreeHighlightedProducts
+= Spree Highlighted Products
 
-This project rocks and uses MIT-LICENSE.
+Spree Highlighted Products is a simple Spree Extension that allows site administrators to mark products as highlighted. Developers can use this to highlight products throughout the Web site.
+
+== Installation
+
+  gem 'spree_highlighted_products', :git => 'git@github.com:entropillc/spree_highlighted_products.git'

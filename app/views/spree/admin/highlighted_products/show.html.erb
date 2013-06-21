@@ -1,0 +1,24 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= t("highlighted") %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('setting') %></th>
+      <th><%= t('value') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= t('enable_highlighted_products') %>:</td>
+      <td><%= @config[:enabled] ? t('say_yes') : t('say_no') %></td>
+    </tr>
+    <tr>
+      <td><%= t('featured_taxon_id') %>:</td>
+      <td><%= @config[:featured_taxon_id] %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to t("edit"), spree.edit_admin_highlighted_products_path, class: 'button icon-edit' %></p>

@@ -5,3 +5,6 @@ en:
     do_unhighlight: Un-highlight
     product_has_been_highlighted: The product has been highlighted
     product_has_been_unhighlighted: The product is no longer highlighted
+  highlighted: "Highlighted Products"
+  enable_highlighted_products: "Enable Highlighed Products"
+  highlighted_products_description: "Ability to highlight featured products in a Taxon"

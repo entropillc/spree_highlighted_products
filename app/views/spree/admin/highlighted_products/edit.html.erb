@@ -1,0 +1,20 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<h1><%= t('highlighted') %></h1>
+
+<%= form_for(@config, :as => "highlighted_products_configuration", :url => admin_highlighted_products_path, :method => :put) do |form| %>
+  <fieldset id="preferences">
+    <%= form.field_container :enabled do %>
+      <%= preference_field_tag(:enabled,   @config[:enabled], :type => :boolean) %>
+      <%= form.label(:enabled, t(:enable_highlighted_products)) %>
+    <% end %>
+    <%= form.field_container :featured_taxon_id do %>
+      <%= form.label(:featured_taxon_id, t(:featured_taxon_id)+": ") + tag(:br) %>
+      <%= preference_field_tag(:featured_taxon_id,  @config[:featured_taxon_id], :type => :string) %>
+    <% end %>
+  </fieldset>
+  <p class="form-buttons">
+    <%= button t('update') %>
+    <%= t("or") %> <%= link_to t("cancel"), admin_highlighted_products_url %>
+  </p>
+<% end %>

@@ -1,15 +1,17 @@
 Spree::Product.class_eval do
   def highlight
-    self.update_attribute(:highlighted_at, Time.current)
+    self.taxons << Spree::Taxon.find_by_id(SpreeHighlightedProducts::Config[:featured_taxon_id])
+    self.update_attribute(:updated_at, Time.current)
   end
 
   def unhighlight
-    self.update_attribute(:highlighted_at, nil)
+    self.taxons.delete Spree::Taxon.find_by_id(SpreeHighlightedProducts::Config[:featured_taxon_id])
+    self.update_attribute(:updated_at, Time.current)
   end
   
   class << self
     def highlighted
-      self.where("highlighted_at is not null").order("highlighted_at DESC")
+      Spree::Taxon.find_by_id(SpreeHighlightedProducts::Config[:featured_taxon_id]).products.order(:created_at)
     end
   end
 end

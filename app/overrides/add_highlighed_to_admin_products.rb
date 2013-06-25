@@ -9,7 +9,7 @@ Deface::Override.new(:virtual_path => %q{spree/admin/products/index},
                          &nbsp;
                          <%= link_to_delete product unless product.deleted? %>
                          &nbsp;
-                         <% if product.highlighted_at.blank? %>
+                         <% unless product.highlighted? %>
                             <%= link_to(t("highlight_products.do_highlight"), highlight_admin_product_url(product), :method => :post) unless product.deleted? %>
                           <% else %>
                             <%= link_to(t("highlight_products.do_unhighlight"), unhighlight_admin_product_url(product), :method => :post) unless product.deleted? %>
